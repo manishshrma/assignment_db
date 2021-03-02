@@ -1,11 +1,10 @@
 package com.example.assignment.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Myuser")
 public class User {
     @Id
     private long id;
@@ -15,6 +14,7 @@ public class User {
     public User() {
 
     }
+
     public User(long id, String name, String email) {
         this.id = id;
         this.name = name;
@@ -43,5 +43,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
